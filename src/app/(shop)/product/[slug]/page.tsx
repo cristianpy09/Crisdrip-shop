@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function Productpage() {
+export default async function Productpage({ params }: { params: Promise<{ slug: string }> }) {
+
+  const {slug}= await params
   return (
-    <div>Product </div>
+    <div>
+        <h1> product page</h1>
+
+        <p>slu: {slug}</p>
+       </div>
   )
 }
