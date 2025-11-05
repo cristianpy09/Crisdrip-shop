@@ -1,6 +1,6 @@
 "use client"
 
-import { Product } from "@/interfaces/poruduc.interface";
+import { Product } from "@/interfaces/products.interface";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
