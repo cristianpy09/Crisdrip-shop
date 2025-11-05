@@ -1,20 +1,30 @@
+"use client"
+
 import { Product } from "@/interfaces/poruduc.interface";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 interface Props {
   product: Product;
 }
 export default function ProductGridItem({ product }: Props) {
+
+  const [first,setFirs]=useState(product.images[0])
+  const changeimage =(posicion:number)=>{
+    setFirs(product.images[posicion])
+  }
+
   return (
-    <div className="rounded-md overflow-hidden fade-in">
+    <div className=" overflow-hidden fade-in">
       <Link href={`/product/${product.slug}`}>
         <Image
-          src={`/products/${product.images[0]}`}
+          src={`/products/${first}`}
           alt={product.title}
-          className="w-full object-cover"
+          className="w-full object-cover "
           width={500}
           height={500}
+          onMouseEnter={()=>changeimage(1)}
+          onMouseLeave={()=>changeimage(0)}
         />
       </Link>
 
