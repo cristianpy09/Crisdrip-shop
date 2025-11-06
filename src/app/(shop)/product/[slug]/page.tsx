@@ -20,9 +20,9 @@ export default async function Productpage({ params }: { params: Promise<{ slug: 
     notFound()
   }
   return (
-    <div className='mt-5 mb-20 grid md:grid-cols-3 gap-3'>
+    <div className='mt-5 mb-20 grid md:grid-cols-3 gap-3 '>
       {/**imagenes del producto */}
-      <div className='col-span-1 md:col-span-2' >
+      <div className='col-span-1 md:col-span-2 w-300' >
         <ProductSlide title={product.title} images={product.images} />
       </div>
 

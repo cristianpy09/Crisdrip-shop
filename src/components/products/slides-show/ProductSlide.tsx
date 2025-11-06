@@ -9,6 +9,7 @@ import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper as SwiperObject } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
+import Image from "next/image";
 
 interface Props {
   images: string[];
@@ -41,17 +42,16 @@ export const ProductSlide = ({ images, title, className }: Props) => {
       >
         {images.map((image) => (
           <SwiperSlide key={image}>
-            <img
-              width={1024}
+            <Image
+              width={2000}
               height={800}
               src={`/products/${image}`}
               alt={title}
-              className=" rounded-lg object-fill"
-            ></img>
+              className="rounded-lg object-fill"
+            ></Image>
           </SwiperSlide>
         ))}
       </Swiper>
-
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
@@ -63,16 +63,17 @@ export const ProductSlide = ({ images, title, className }: Props) => {
       >
         {images.map((image) => (
           <SwiperSlide key={image}>
-            <img
+            <Image
               width={300}
               height={300}
               src={`/products/${image}`}
               alt={title}
-              className=" rounded-lg object-fill"
-            ></img>
+              className="rounded-lg object-fill"
+            ></Image>
           </SwiperSlide>
         ))}
       </Swiper>
+      
     </div>
   );
 };

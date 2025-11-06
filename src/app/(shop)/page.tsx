@@ -1,7 +1,7 @@
 import ProductGrid from "@/components/products/product_grid/ProductGrid";
 import Title from "@/components/ui/title/Title";
 import { initialData } from "@/seed/seed";
-import Link from "next/link";
+
 
 const products = initialData.products;
 
