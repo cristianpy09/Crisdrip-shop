@@ -20,7 +20,7 @@ export default async function Productpage({
     notFound();
   }
   return (
-    <div className="mt-8 m-30 mb-10 space-x-10  grid md:grid-cols-3 gap-3 ">
+    <div className="mt-8 m-30 mb-10 space-x-10  grid md:grid-cols-3 gap-3  ">
       {/**imagenes del producto */}
       <div className="col-span-1 md:col-span-2  ">
         <ProductSlide title={product.title} images={product.images} />
@@ -40,7 +40,7 @@ export default async function Productpage({
 
         {/**selector de cantidad */}
 
-        <QuantitySelector quantity={2} />
+        <QuantitySelector quantity={1} />
 
         <button className="btn-primary my-5 cursor-pointer bg-gray-300 p-2 rounded">
           Agregar al carrito
