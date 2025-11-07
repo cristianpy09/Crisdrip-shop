@@ -1,32 +1,40 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+
 import Title from "@/components/ui/title/Title";
-import QuantitySelector from "@/components/products/quantity-selector/QuantitySelector";
 import { initialData } from "@/seed/seed";
 import clsx from "clsx";
+import { IoCarOutline } from "react-icons/io5";
 
 const productsInCart = [initialData.products[0]];
 
 interface Props {
-  params:{id:string}
+  params: { id: string|number };
 }
 
-export default function OrderIdPage({params}:Props) {
-  const {id} = params
+export default async function OrderIdPage({ params }: Props) {
+  const { id } = await params;
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-full max-w-[1000px]">
         {/* Título */}
-        <Title title={` Orden #${id} `}/>
+        <Title title={` Orden #${id} `} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5">
           {/* Carrito */}
           <div className="flex flex-col">
-            <div className={
-              clsx("flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5")
-            } > 
-
+            <div
+              className={clsx(
+                "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+                {
+                  "bg-red-500": false,
+                  "bg-green-700": true,
+                }
+              )}
+            >
+              <IoCarOutline size={30} />
+              {/* <span className="mx-2" >Pendiendte</span> */}
+              <span className="mx-2"> Pagada</span>
             </div>
 
             {/* Productos */}
@@ -43,8 +51,9 @@ export default function OrderIdPage({params}:Props) {
                 <div>
                   <p className="font-semibold">{product.title}</p>
                   <p className="text-gray-600">${product.price} x 3</p>
-                  <p className="text-gray-1000" >Subtotal: ${product.price * 3}</p>
-                  
+                  <p className="text-gray-1000">
+                    Subtotal: ${product.price * 3}
+                  </p>
                 </div>
               </div>
             ))}
@@ -54,7 +63,7 @@ export default function OrderIdPage({params}:Props) {
           <div className="bg-white rounded-xl shadow-xl p-7">
             <h2 className="text-2xl mb-2 font-bold">DIreccion de entrega</h2>
             <div className="mb-10">
-              <p className="text-xl" >Cristian celis</p>
+              <p className="text-xl">Cristian celis</p>
               <p>CrA#DAFAF</p>
               <p>centro</p>
               <p>24242332</p>
@@ -81,12 +90,19 @@ export default function OrderIdPage({params}:Props) {
             </div>
 
             <div className="mt-8">
-              <Link
-                href="/orders/123"
-                className=" w-full flex justify-center"
+              <div
+                className={clsx(
+                  "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+                  {
+                    "bg-red-500": false,
+                    "bg-green-700": true,
+                  }
+                )}
               >
-                Colocar orden
-              </Link>
+                <IoCarOutline size={30} />
+                {/* <span className="mx-2" >Pendiendte</span> */}
+                <span className="mx-2"> Pagada</span>
+              </div>
             </div>
           </div>
         </div>
