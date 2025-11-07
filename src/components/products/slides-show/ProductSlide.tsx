@@ -40,16 +40,13 @@ export const ProductSlide = ({ images, title, className }: Props) => {
       >
         {images.map((image) => (
           <SwiperSlide key={image}>
-            <div className="relative w-full h-[250px] md:h-[700px]">
-              <Image
-                src={`/products/${image}`}
-                alt={title}
-                fill
-                className="object-cover rounded-lg"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            </div>
+            <Image
+              src={`/products/${image}`}
+              alt={title}
+              className=" object-fill "
+              width={1024}
+              height={500}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

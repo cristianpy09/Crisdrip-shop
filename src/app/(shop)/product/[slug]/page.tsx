@@ -1,5 +1,6 @@
 import QuantitySelector from "@/components/products/quantity-selector/QuantitySelector";
 import SizeSelector from "@/components/products/size-selector/SizeSelector";
+import { PorductMobileSlideshow } from "@/components/products/slides-show/PorductMobileSlideshow";
 import { ProductSlide } from "@/components/products/slides-show/ProductSlide";
 
 import { titleFont } from "@/confg/fonts";
@@ -20,18 +21,26 @@ export default async function Productpage({
     notFound();
   }
   return (
-    <div className="mt-8 m-30 mb-10 space-x-10  grid md:grid-cols-3 gap-3  ">
+    <div className="mt-8 m-5 mb-10 space-x-7  grid md:grid-cols-3 gap-3  ">
       {/**imagenes del producto */}
-      <div className="col-span-1 md:col-span-2  ">
-        <ProductSlide title={product.title} images={product.images} />
+      <div className="col-span-1  md:col-span-2  ">
+
+        {/**slide mobile */}
+          <PorductMobileSlideshow title={product.title} images={product.images} className="block md:hidden" />
+
+
+
+
+        {/**slide escritorio */}
+        <ProductSlide title={product.title} images={product.images} className="hidden md:block" />
       </div>
 
       {/**Informacion del producto */}
-      <div className="col-span-1 px-5  ">
+      <div className="col-span-1   ">
         <h1 className={`${titleFont.className} antialiased font-bold text-xl `}>
           {product.title}
         </h1>
-        <p className="text-lg mb-5"> ${product.price} </p>
+        <p className="text-lg m-"> ${product.price} </p>
         {/**selector de tallas */}
         <SizeSelector
           selectedSIze={product.sizes[0]}
