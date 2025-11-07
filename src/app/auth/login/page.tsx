@@ -23,7 +23,7 @@ export default function LoginPage() {
 
         <button
           
-          className="btn-primary">
+          className="btn-primary cursor-pointer ">
           Ingresar
         </button>
 
@@ -37,7 +37,7 @@ export default function LoginPage() {
 
         <Link
           href="/auth/new-account" 
-          className="btn-secondary text-center">
+          className=" text-center">
           Crear una nueva cuenta
         </Link>
 

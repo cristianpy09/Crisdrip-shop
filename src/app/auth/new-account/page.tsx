@@ -28,7 +28,7 @@ export default function RegisterPage() {
 
         <button
           
-          className="btn-primary">
+          className="btn-primary cursor-pointer">
           Registrar
         </button>
 
@@ -42,7 +42,7 @@ export default function RegisterPage() {
 
         <Link
           href="/auth/login" 
-          className="btn-secondary text-center">
+          className=" text-center">
           Ingresar
         </Link>
 

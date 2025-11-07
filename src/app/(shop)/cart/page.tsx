@@ -71,7 +71,7 @@ export default function CartPage() {
             </div>
 
             <div className="mt-8">
-              <Link href="/checkout/address" className=" w-full flex justify-center">
+              <Link href="/checkout/address" className=" btn-primary w-full flex justify-center">
                 Ir al checkout
               </Link>
             </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 border-t mt-20 py-8">
+    <footer className="w-full bg-gray-100 border-t mt-15 py-8">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-600 text-sm">
         
         {/* Logo / Marca */}

@@ -21,12 +21,12 @@ export default async function Productpage({
     notFound();
   }
   return (
-    <div className="mt-8 m-5 mb-10 space-x-7  grid md:grid-cols-3 gap-3">
+    <div className="mt-8 mb-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
       {/**imagenes del producto */}
       <div className="col-span-1  md:col-span-2  ">
 
         {/**slide mobile */}
-          <PorductMobileSlideshow title={product.title} images={product.images} className="block md:hidden" />
+          <PorductMobileSlideshow title={product.title} images={product.images} className="block md:hidden  " />
 
 
 

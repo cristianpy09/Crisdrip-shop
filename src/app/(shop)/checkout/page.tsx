@@ -78,7 +78,7 @@ export default function CheckoutPage() {
             <div className="mt-8">
               <Link
                 href="/orders/123"
-                className=" w-full flex justify-center"
+                className=" w-full flex justify-center btn-primary"
               >
                 Colocar orden
               </Link>
