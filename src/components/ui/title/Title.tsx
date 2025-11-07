@@ -3,8 +3,8 @@ import React from 'react'
 
 interface Props {
     title:string
-    subtitle:string
-    className:string
+    subtitle?:string
+    className?:string
 }
 
 export default function Title({title,subtitle,className}:Props) {

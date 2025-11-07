@@ -21,7 +21,7 @@ export default async function Productpage({
     notFound();
   }
   return (
-    <div className="mt-8 m-5 mb-10 space-x-7  grid md:grid-cols-3 gap-3  ">
+    <div className="mt-8 m-5 mb-10 space-x-7  grid md:grid-cols-3 gap-3">
       {/**imagenes del producto */}
       <div className="col-span-1  md:col-span-2  ">
 
