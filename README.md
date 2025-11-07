@@ -1,16 +1,16 @@
-#  CrisDripShop
+# CrisDripShop
 
-Tienda online moderna desarrollada con **Next.js**, **TypeScript** y **Tailwind CSS**.  
-Incluye vista de productos, selección de tallas y cantidades, carrito de compras y diseño 100% responsive.
+Modern online store built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
+Includes product views, size and quantity selectors, a shopping cart, and a fully responsive design.
 
-##  Tecnologías
+## Technologies
 - Next.js 14  
 - React 18  
 - Tailwind CSS  
 - TypeScript  
 - Swiper.js  
 
-##  Ejecutar localmente
+## Run Locally
 ```bash
 npm install
 npm run dev
