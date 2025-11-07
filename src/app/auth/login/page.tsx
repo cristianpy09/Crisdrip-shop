@@ -20,12 +20,13 @@ export default function LoginPage() {
         <input
           className="px-5 py-2 border bg-gray-200 rounded mb-5"
           type="email" />
-
+          <Link href="/" className="btn-primary cursor-pointer text-center " >
         <button
           
-          className="btn-primary cursor-pointer ">
+          >
           Ingresar
         </button>
+            </Link>
 
 
         {/* divisor line */ }
