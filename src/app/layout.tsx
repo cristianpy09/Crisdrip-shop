@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { inter } from "@/confg/fonts";
+import { CartProvider } from "@/context/CartContext";
 
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
-        {children}
+        <CartProvider> {children}</CartProvider>
       </body>
     </html>
   );

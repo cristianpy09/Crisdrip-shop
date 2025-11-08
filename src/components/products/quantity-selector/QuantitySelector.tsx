@@ -1,5 +1,7 @@
 "use client";
 
+import Productpage from "@/app/(shop)/product/[slug]/page";
+import { useCart } from "@/context/CartContext";
 import React, { useState } from "react";
 import { IoAddCircleOutline, IoRemoveCircleOutline } from "react-icons/io5";
 interface Props {
@@ -7,8 +9,10 @@ interface Props {
 }
 
 export default function QuantitySelector({ quantity }: Props) {
-  const [count, setCount] = useState(quantity);
-
+  // const [count, setCount] = useState(quantity);
+    const { count, setCount } = useCart();
+  
+  
   const onQuantityChanged = (value: number) => {
     if (count + value < 1) return;
     setCount(count + value);
@@ -31,6 +35,8 @@ export default function QuantitySelector({ quantity }: Props) {
       >
         <IoAddCircleOutline size={30} />
       </button>
+
+    
     </div>
   );
 }

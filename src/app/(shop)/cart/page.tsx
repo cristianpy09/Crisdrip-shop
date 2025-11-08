@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,12 +7,13 @@ import Title from "@/components/ui/title/Title";
 import QuantitySelector from "@/components/products/quantity-selector/QuantitySelector";
 import { initialData } from "@/seed/seed";
 import { redirect } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 
-const productsInCart = [initialData.products[0]];
+const productsInCart = [initialData.products];
 
 export default function CartPage() {
   // redirect("/empy")
-
+const {items} = useCart()
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-full max-w-[1000px]">
@@ -28,19 +31,19 @@ export default function CartPage() {
             </Link>
 
             {/* Productos */}
-            {productsInCart.map((product) => (
-              <div key={product.slug} className="flex items-start mb-5">
-                <Image
+            {items.map((product) => (
+              <div key={product.size} className="flex items-start mb-5">
+                {/* <Image
                   src={`/products/${product.images[0]}`}
                   width={100}
                   height={100}
                   alt={product.title}
                   className="mr-5 rounded-md"
-                />
+                /> */}
 
                 <div>
-                  <p className="font-semibold">{product.title}</p>
-                  <p className="text-gray-600">${product.price}</p>
+                  <p className="font-semibold">{product.size}</p>
+                  <p className="text-gray-600">${product.quantity}</p>
                   <QuantitySelector quantity={3} />
                   <button className="underline mt-3 text-red-500 cursor-pointer ">
                     Remover
