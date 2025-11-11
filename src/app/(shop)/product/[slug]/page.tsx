@@ -15,7 +15,7 @@ export default async function Productpage({
 
   const product = initialData.products.find((product) => product.slug === slug);
   if (!product) notFound();
-
+  const images = product.images[0]
   return (
     <div className="mt-8 mb-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
       {/* Imágenes del producto */}
@@ -40,7 +40,7 @@ export default async function Productpage({
         <p className="text-lg mb-4">${product.price}</p>
 
         {/* Aquí renderizamos la parte interactiva */}
-        <ProductActions product={product} />
+        <ProductActions product={product}  img={images} />
       </div>
     </div>
   );

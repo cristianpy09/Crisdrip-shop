@@ -1,8 +1,8 @@
 "use client";
 
-import Productpage from "@/app/(shop)/product/[slug]/page";
+
 import { useCart } from "@/context/CartContext";
-import React, { useState } from "react";
+
 import { IoAddCircleOutline, IoRemoveCircleOutline } from "react-icons/io5";
 interface Props {
   quantity: number;

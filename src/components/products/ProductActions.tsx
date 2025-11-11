@@ -7,20 +7,27 @@ import { ValidSizes } from "@/interfaces/products.interface";
 
 interface Props {
   product: {
+    slug:string
     title: string;
     price: number;
     sizes: ValidSizes[];
     description: string;
+    
   };
+  img:string
 }
 
-export default function ProductActions({ product }: Props) {
-  const { count, selectedSize, addToCart, items } = useCart();
-
+export default function ProductActions({ product ,img}: Props) {
+  const{slug}=product
+ 
+  const { count, selectedSize, addToCart, images } = useCart();
+const imagen = img
   const handleAddToCart = () => {
     if (!selectedSize) return alert("Selecciona una talla antes de continuar");
 
     addToCart({
+      images:imagen,
+      id:slug,
       size: selectedSize,
       quantity: count,
     });
@@ -35,7 +42,7 @@ export default function ProductActions({ product }: Props) {
 
       <button
         onClick={handleAddToCart}
-        className="bg-gray-300 hover:bg-gray-400 transition-all my-5 px-4 py-2 rounded w-full"
+        className="btn-primary hover:bg-gray-400 transition-all my-5 px-4 py-2 rounded w-full cursor-pointer"
       >
         Agregar al carrito
       </button>

@@ -1,19 +1,20 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Title from "@/components/ui/title/Title";
 import QuantitySelector from "@/components/products/quantity-selector/QuantitySelector";
-import { initialData } from "@/seed/seed";
-import { redirect } from "next/navigation";
+
 import { useCart } from "@/context/CartContext";
 
-const productsInCart = [initialData.products];
-
 export default function CartPage() {
+
+
   // redirect("/empy")
-const {items} = useCart()
+
+  const { items } = useCart();
+
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-full max-w-[1000px]">
@@ -33,17 +34,18 @@ const {items} = useCart()
             {/* Productos */}
             {items.map((product) => (
               <div key={product.size} className="flex items-start mb-5">
-                {/* <Image
-                  src={`/products/${product.images[0]}`}
+                <Image
+                  src={`/products/${product.images}`}
                   width={100}
                   height={100}
-                  alt={product.title}
+                  alt={product.id}
                   className="mr-5 rounded-md"
-                /> */}
+                />
 
                 <div>
                   <p className="font-semibold">{product.size}</p>
                   <p className="text-gray-600">${product.quantity}</p>
+
                   <QuantitySelector quantity={3} />
                   <button className="underline mt-3 text-red-500 cursor-pointer ">
                     Remover
@@ -74,7 +76,10 @@ const {items} = useCart()
             </div>
 
             <div className="mt-8">
-              <Link href="/checkout/address" className=" btn-primary w-full flex justify-center">
+              <Link
+                href="/checkout/address"
+                className=" btn-primary w-full flex justify-center"
+              >
                 Ir al checkout
               </Link>
             </div>

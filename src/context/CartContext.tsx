@@ -4,13 +4,18 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 // Tipado del producto (puedes ajustar según tu modelo)
 interface CartItem {
-  
+  id:string
   size: string;
   quantity: number;
+  images:string
 }
 
 // Tipado del contexto
 interface CartContextProps {
+  images:string
+  setImages:(images: string) => void;
+  id:string,
+  setId:(size: string) => void;
   items: CartItem[];
   selectedSize: string;
   setSelectedSize: (size: string) => void;
@@ -34,10 +39,12 @@ export const useCart = () => {
 
 // Proveedor del contexto
 export const CartProvider = ({ children }: { children: ReactNode }) => {
+  
   const [items, setItems] = useState<CartItem[]>([]);
   const [selectedSize, setSelectedSize] = useState("");
   const [count, setCount] = useState<number>(1);
-
+  const [id,setId]=useState("")
+  const [images,setImages]=useState("")
 
 
   const addToCart = (item: CartItem) => {
@@ -48,7 +55,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <CartContext.Provider
-      value={{count, setCount, items, selectedSize, setSelectedSize, addToCart, clearCart }}
+      value={{count, setCount, items, selectedSize, setSelectedSize, addToCart, clearCart ,id, setId,images,setImages}}
     >
       {children}
     </CartContext.Provider>
